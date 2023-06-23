@@ -2,11 +2,6 @@
 
 class Banco
 {
-    	
-	private static $dbNome = 'projetos';
-    private static $dbHost = '127.0.0.1';
-    private static $dbUsuario = 'root';
-    private static $dbSenha = '';
     
     private static $cont = null;
     
@@ -21,6 +16,19 @@ class Banco
         {
             try
             {
+                if (file_exists(__DIR__ . '/.env')) {
+                    $dotenvPath = __DIR__ . '/.env';
+                    $dotenv = parse_ini_file($dotenvPath);
+                    foreach ($dotenv as $key => $value) {
+                        putenv("$key=$value");
+                    }
+                }
+                $dbHost   = getenv('DB_HOST');
+                $dbNome   = getenv('DB_DATABASE');
+                $dbUsuario   = getenv('DB_USERNAME');
+                $dbSenha   = getenv('DB_PASSWORD');
+                // localhost do the following
+                self::$cont =  new PDO( "mysql:host=".$dbHost.";"."dbname=".$dbNome, $dbUsuario, $dbSenha);
                 self::$cont =  new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbNome, self::$dbUsuario, self::$dbSenha); 
             }
             catch(PDOException $exception)
