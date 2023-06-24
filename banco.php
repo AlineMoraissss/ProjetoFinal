@@ -16,6 +16,7 @@ class Banco
         {
             try
             {
+                echo __DIR__ . '/.env';
                 if (file_exists(__DIR__ . '/.env')) {
                     $dotenvPath = __DIR__ . '/.env';
                     $dotenv = parse_ini_file($dotenvPath);
@@ -29,7 +30,6 @@ class Banco
                 $dbSenha   = getenv('DB_PASSWORD');
                 // localhost do the following
                 self::$cont =  new PDO( "mysql:host=".$dbHost.";"."dbname=".$dbNome, $dbUsuario, $dbSenha);
-                self::$cont =  new PDO( "mysql:host=".self::$dbHost.";"."dbname=".self::$dbNome, self::$dbUsuario, self::$dbSenha); 
             }
             catch(PDOException $exception)
             {
