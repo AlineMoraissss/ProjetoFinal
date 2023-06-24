@@ -16,7 +16,7 @@ class Banco
         {
             try
             {
-                echo __DIR__ . '/.env';
+                // echo __DIR__ . '/.env';
                 if (file_exists(__DIR__ . '/.env')) {
                     $dotenvPath = __DIR__ . '/.env';
                     $dotenv = parse_ini_file($dotenvPath);
