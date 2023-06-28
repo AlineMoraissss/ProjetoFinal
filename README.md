@@ -8,3 +8,4 @@ Essa tabela representa uma entidade que contém informações como Id, modelo e 
 No site, também são exibidas informações importantes dos produtos cadastrados por meio do botão "Info", o qual mostra qual projeto elétrico e contrato aquele produto está associado.
 Demonstrando o relacionamento entre a entidade "Produtos" e as entidades "Projeto elétrico" e "Contratos".
 
+Obs: O Id do produto a ser cadastrado devera ser um número. 
