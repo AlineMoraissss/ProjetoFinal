@@ -7,3 +7,7 @@ Em relação ao projeto, foi criada uma página web que exibe as informações d
 Essa tabela representa uma entidade que contém informações como Id, modelo e marca dos produtos cadastrados. 
 No site, também são exibidas informações importantes dos produtos cadastrados por meio do botão "Info", o qual mostra qual projeto elétrico e contrato aquele produto está associado.
 Demonstrando o relacionamento entre a entidade "Produtos" e as entidades "Projeto elétrico" e "Contratos".
+
+Link projeto Azure:
+
+https://php-aline.azurewebsites.net/
